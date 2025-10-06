@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriScale Labs - #1 Supplement Manufacturing & Brand Scaling Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #e60000;
+            --accent-color: #00a652;
+            --light-blue: #e6f2ff;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(230, 0, 0, 0.3);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header-phone:hover {
+            background-color: #cc0000;
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 6px 15px rgba(230, 0, 0, 0.4);
+        }
+
+        .header-phone i {
+            margin-right: 8px;
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/supplements-hero/1920/1080.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 180px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(230, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 0, 0, 0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Capabilities Section - Updated to 2-column grid */
+        .capabilities {
+            background-color: var(--gray);
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .capability-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .capability-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .capability-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: var(--white);
+            border-radius: 50px;
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+
+        .badge i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* How We Help Section */
+        .help-section {
+            background-color: var(--white);
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .help-item {
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .help-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .help-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .help-content {
+            padding: 25px;
+        }
+
+        .help-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .help-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .help-content p {
+            color: var(--text-dark);
+        }
+
+        /* About Us Section */
+        .about-us {
+            background-color: var(--gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Trust Section - Updated to 2-column grid */
+        .trust-section {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .trust-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .trust-item {
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .trust-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .trust-content-inner {
+            padding: 30px;
+        }
+
+        .trust-icon {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .trust-content-inner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .trust-content-inner p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            background-color: var(--gray);
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .choose-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choose-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .choose-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .choose-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .choose-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .choose-item p {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background-color: var(--light-blue);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        .contact-info .address {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info .address i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-form {
+            background-color: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0052a3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-column p,
+        .footer-column ul {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+                position: relative;
+            }
+
+            .header-phone {
+                position: static;
+                transform: none;
+                margin-top: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .badge-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://z-cdn-media.chatglm.cn/files/7e355950-f455-4f96-9059-851ff4cc2494_Logo1.png?auth_key=1790615449-0a5ca093edca4c1bb51ff9480cfcea19-0-8830352cbf4cdc6465acd6eb10b16eee" alt="NutriScale Labs Logo">
+               
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul style="padding-right: 180px;" id="navMenu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#how-we-help">How We Help</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#trust">Trust</a></li>
+                    <li><a href="#why-choose">Why Choose Us</a></li>
+                    <li><a style="padding-right: 80px;" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="tel:305-497-8963" class="header-phone">
+                <i class="fas fa-phone"></i>
+                305-497-8963
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Scale Your Brand with the #1 Supplement Partner in the USA</h1>
+            <p>From manufacturing to marketing — NutriScale Labs is the only partner who helps you grow.</p>
+            <a href="tel:305-497-8963" class="cta-button">Call Us Now – 305-497-8963</a>
+        </div>
+    </section>
+
+    <!-- Our Capabilities Section - Updated to 2-column grid -->
+    <section id="capabilities" class="capabilities">
+        <div class="container">
+            <h2 class="section-title">Our Capabilities</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <img src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/pills-still-life-vitamins-1296x728-header.jpg?w=1155&h=1528" alt="Supplement Pills" class="capability-image">
+                    <div class="capability-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>Pills</h3>
+                    <p>High-quality supplement tablets with precise formulations and consistent dosing for maximum efficacy.</p>
+                </div>
+                <div class="capability-card">
+                    <img src="https://nutritionsource.hsph.harvard.edu/wp-content/uploads/2024/07/pexels-jonathanborba-17820719-1024x683.jpg" alt="Supplement Capsules" class="capability-image">
+                    <div class="capability-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <h3>Capsules</h3>
+                    <p>Veggie and gelatin capsules in various sizes to accommodate your specific supplement needs.</p>
+                </div>
+                <div class="capability-card">
+                    <img src="https://cdn.consumerlab.com/images/review/363_image_hires_protein-powders-reviewed-by-consumerlab-member-2022.jpg?size=small" alt="Supplement Powders" class="capability-image">
+                    <div class="capability-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Powders</h3>
+                    <p>Pure, potent powdered supplements that can be customized for any formulation requirement.</p>
+                </div>
+                <div class="capability-card">
+                    <img src="https://a.storyblok.com/f/125940/3000x3000/41652f29bf/probiotic_chews.jpg/m/3840x0" alt="Pet Supplements" class="capability-image">
+                    <div class="capability-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Pet Products</h3>
+                    <p>Specially formulated supplements for pets, ensuring their health and wellness needs are met.</p>
+                </div>
+            </div>
+            <div class="badge-container">
+                <div class="badge">
+                    <i class="fas fa-flag-usa"></i>
+                    <span>MADE IN USA</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-certificate"></i>
+                    <span>FDA APPROVED</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-award"></i>
+                    <span>CERTIFIED QUALITY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help Section -->
+    <section id="how-we-help" class="help-section">
+        <div class="container">
+            <h2 class="section-title">How We Help You Scale</h2>
+            <div class="help-grid">
+                <div class="help-item">
+                    <img src="https://picsum.photos/seed/brand-design-1/600/400.jpg" alt="Label & Logo Design" class="help-image">
+                    <div class="help-content">
+                        <div class="help-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Label & Logo Design</h3>
+                        <p>Professional branding services to make your supplements stand out on the shelf.</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <img src="https://picsum.photos/seed/ecommerce-setup-1/600/400.jpg" alt="E-Commerce Setup" class="help-image">
+                    <div class="help-content">
+                        <div class="help-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Shopify/E-Commerce Setup</h3>
+                        <p>Complete e-commerce solutions to launch your supplement brand online.</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <img src="https://picsum.photos/seed/social-media-1/600/400.jpg" alt="Social Media Marketing" class="help-image">
+                    <div class="help-content">
+                        <div class="help-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <h3>Instagram & TikTok Growth</h3>
+                        <p>Social media marketing strategies to grow your brand's online presence.</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <img src="https://picsum.photos/seed/dropshipping-1/600/400.jpg" alt="Dropshipping & Fulfillment" class="help-image">
+                    <div class="help-content">
+                        <div class="help-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Dropshipping & Fulfillment</h3>
+                        <p>Seamless fulfillment solutions to handle your orders efficiently.</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <img src="https://picsum.photos/seed/consultation-1/600/400.jpg" alt="1-on-1 Consultation" class="help-image">
+                    <div class="help-content">
+                        <div class="help-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>1-on-1 Consultation</h3>
+                        <p>Personalized guidance to help you build and scale your supplement brand.</p>
+                    </div>
+                </div>
+                <div class="help-item">
+                    <img src="https://picsum.photos/seed/product-development-1/600/400.jpg" alt="Product Development" class="help-image">
+                    <div class="help-content">
+                        <div class="help-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Product Development</h3>
+                        <p>Expert formulation and product development services for unique supplement needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-us">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        At NutriScale Labs, we believe manufacturing is only the beginning. Based in the heart of Miami, Florida, we are more than just a supplement factory — we are your brand scaling partner.
+                    </p>
+                    <p>
+                        With our state-of-the-art facility in Hialeah (2630 W 79th St, Hialeah, FL 33016), we produce high-quality pills, capsules, powders, and even pet supplements — all Made in the USA and backed by FDA-approved standards and full certifications.
+                    </p>
+                    <p>
+                        But what truly sets us apart is our commitment to helping you grow your dream brand. From custom formulations and premium raw ingredients to label and logo creation, Shopify integration, and 1-on-1 consultation, we guide you every step of the way.
+                    </p>
+                    <p>
+                        We are the only manufacturer that combines world-class production with real brand-building expertise. With NutriScale Labs, you don't just get products — you get a partner who's dedicated to scaling your business.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/seed/nutriscale-facility/600/400.jpg" alt="NutriScale Labs Facility" class="about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section - Updated to 2-column grid -->
+    <section id="trust" class="trust-section">
+        <div class="container">
+            <h2 class="section-title">Why Trust NutriScale Labs</h2>
+            <div class="trust-content">
+                <div class="trust-item">
+                    <img src="https://picsum.photos/seed/quality-control-1/600/400.jpg" alt="Quality Assurance" class="trust-image">
+                    <div class="trust-content-inner">
+                        <div class="trust-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Quality Assurance</h3>
+                        <p>Our rigorous quality control processes ensure every product meets the highest standards.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <img src="https://picsum.photos/seed/premium-ingredients-1/600/400.jpg" alt="Premium Ingredients" class="trust-image">
+                    <div class="trust-content-inner">
+                        <div class="trust-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Premium Ingredients</h3>
+                        <p>We source only the finest raw materials for our supplement formulations.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <img src="https://picsum.photos/seed/scientific-research-1/600/400.jpg" alt="Scientific Expertise" class="trust-image">
+                    <div class="trust-content-inner">
+                        <div class="trust-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3>Scientific Expertise</h3>
+                        <p>Our team of experts ensures every formulation is safe, effective, and backed by science.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <img src="https://picsum.photos/seed/partnership-1/600/400.jpg" alt="Partnership Approach" class="trust-image">
+                    <div class="trust-content-inner">
+                        <div class="trust-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Partnership Approach</h3>
+                        <p>We don't just manufacture supplements—we build lasting partnerships with our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="why-choose-grid">
+                <div class="choose-item">
+                    <img src="https://picsum.photos/seed/usa-manufacturing/400/250.jpg" alt="Made in USA" class="choose-image">
+                    <div class="choose-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>NO TARIFFS – MADE IN USA</h3>
+                    <p>Avoid international shipping costs and delays with our US-based manufacturing facility.</p>
+                </div>
+                <div class="choose-item">
+                    <img src="https://picsum.photos/seed/fast-shipping/400/250.jpg" alt="Fast Shipping" class="choose-image">
+                    <div class="choose-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>LIGHTNING FAST SHIPPING DAYS</h3>
+                    <p>Get your products delivered quickly with our efficient logistics network.</p>
+                </div>
+                <div class="choose-item">
+                    <img src="https://picsum.photos/seed/dropshipping-solution/400/250.jpg" alt="Dropshipping" class="choose-image">
+                    <div class="choose-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>DROPSHIPPING AVAILABLE</h3>
+                    <p>We handle fulfillment so you can focus on growing your brand.</p>
+                </div>
+                <div class="choose-item">
+                    <img src="https://picsum.photos/seed/brand-building/400/250.jpg" alt="Brand Building" class="choose-image">
+                    <div class="choose-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>MAKE YOUR DREAM BRAND COME TRUE</h3>
+                    <p>From concept to launch, we help bring your supplement brand vision to life.</p>
+                </div>
+                <div class="choose-item">
+                    <img src="https://picsum.photos/seed/custom-formulations/400/250.jpg" alt="Custom Formulations" class="choose-image">
+                    <div class="choose-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>ANY FORMULATION POSSIBLE</h3>
+                    <p>Custom formulations for human supplements and pet products.</p>
+                </div>
+                <div class="choose-item">
+                    <img src="https://picsum.photos/seed/scaling-support/400/250.jpg" alt="Scaling Support" class="choose-image">
+                    <div class="choose-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>SCALING SUPPORT</h3>
+                    <p>We grow with you, providing solutions as your brand expands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.731695938676!2m3!1d3519.526852272536!2m2!1d25.887958684725896!3d-80.2945499818111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c5b7e6e9b8b9%3A0x3d8e8e8e8e8e8e8e!2s2630%20W%2079th%20St%2C%20Hialeah%2C%20FL%2033016%2C%USA!5e0!3m2!1sen!2sus!4v1635789012345!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>2630 W 79th St, Hialeah, FL 33016</span>
+                    </div>
+                    <p><i class="fas fa-phone"></i> <a href="tel:305-497-8963" style="color: var(--primary-color);">305-497-8963</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@nutriscalelabs.com" style="color: var(--primary-color);">info@nutriscalelabs.com</a></p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM EST</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3 style="margin-bottom: 15px;">Core Messaging</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> NO TARIFFS – MADE IN THE USA</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> LIGHTNING FAST SHIPPING DAYS</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> DROPSHIPPING AVAILABLE</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> MAKE YOUR DREAM BRAND COME TRUE</li>
+                            <li><i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i> ANY FORMULATION POSSIBLE – HUMAN SUPPLEMENTS & PET PRODUCTS</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="tel:305-497-8963" class="cta-button" style="display: inline-block; margin-top: 20px;">Call Now: 305-497-8963</a>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <img style="width: 70px;" src="https://i.postimg.cc/SxsbSmTn/Logo1.png" alt="">
+                <p>Your #1 supplement manufacturing & brand scaling partner in the USA.</p>
+                <p>From manufacturing to marketing, we help you scale your supplement brand.</p>
+            </div>
+            <div class="footer-column">
+                <h3 style="color: #cc0000;">Quick Links</h3>
+                <ul>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#how-we-help">How We Help</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#trust">Why Trust Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 style="color: #cc0000;">Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 2630 W 79th St, Hialeah, FL 33016</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:305-497-8963" style="color: #ccc;">305-497-8963</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@nutriscalelabs.com" style="color: #ccc;">info@nutriscalelabs.com</a></p>
+            </div>
+            <div class="footer-column">
+                <h3 style="color: #cc0000;">Follow Us</h3>
+                <p>Stay connected for the latest updates and industry insights.</p>
+                <div style="display: flex; gap: 15px; margin-top: 15px;">
+                    <a href="#" style="color: #ccc; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #ccc; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: #ccc; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: #ccc; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright&copy; 2025 NutriScale Labs. All Rights Reserved. | Privacy Policy | Terms of Service | Developed by Zakir Hossain<a href="#" style="color: #ccc;"></a>  <a href="#" style="color: #ccc;"></a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                document.getElementById('navMenu').classList.remove('active');
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show a success message
+            alert(`Thank you, ${name}! Your message has been received. We'll contact you soon at ${phone}.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Add phone number click-to-call functionality
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // This will open the phone dialer on mobile devices
+                // On desktop, it might open a VoIP application
+            });
+        });
+    </script>
+</body>
+</html>
